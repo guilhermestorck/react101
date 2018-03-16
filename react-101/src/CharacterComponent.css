@@ -7,6 +7,10 @@
     padding: 4px;
 }
 
+.CharacterComponent.favorite {
+    background-color: gold;
+}
+
 .CharacterComponent img {
     float: left;
     margin: 2px;
@@ -17,6 +21,11 @@
     line-height: 36px;
     margin: 0px;
     text-align: left;
+}
+
+.CharacterComponent h3 button {
+    float: right;
+    margin-top: 10px;
 }
 
 .CharacterComponent p {

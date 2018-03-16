@@ -2,8 +2,16 @@ import React, { Component } from 'react';
 import './CharacterComponent.css';
 
 class CharacterComponent extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			isFavorite: false
+		};
+	}
+
 	render() {
 		const { name, image, description } = this.props;
+		const { isFavorite } = this.state;
 
 		let imageComponent = null;
 		if(image) {
@@ -11,9 +19,14 @@ class CharacterComponent extends Component {
 		}
 		
 		return (
-			<div className='CharacterComponent'>
+			<div className={`CharacterComponent ${isFavorite ? 'favorite' : ''}`}>
 				{ imageComponent }
-				<h3>{name}</h3>
+				<h3>
+					{name}
+					<button onClick={() => this.setState({ isFavorite: !isFavorite })}>
+						{ isFavorite ? 'Unfav' : 'Fav' }
+					</button>
+				</h3>
 				<p>{description}</p>
 			</div>
 		);

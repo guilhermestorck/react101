@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import CharacterComponent from './CharacterComponent';
+import ClockTicker from './ClockTicker';
 
 class App extends Component {
 	render() {
@@ -12,6 +13,7 @@ class App extends Component {
 					<h1 className="App-title">Welcome to React</h1>
 				</header>
 				<p className="App-intro">
+					<ClockTicker />
 					<CharacterComponent
 						name='Saitama'
 						description='Also known as Caped Baldy, he is a class C hero. Not impressive.'
