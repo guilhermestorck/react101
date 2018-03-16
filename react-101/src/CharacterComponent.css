@@ -1,5 +1,5 @@
 .CharacterComponent {
-    margin: auto;
+    margin: 20px auto 0px auto;
     display: block;
     max-width: 200px;
     border: 1px solid silver;
@@ -15,6 +15,7 @@
     float: left;
     margin: 2px;
     margin-right: 4px;
+    height: 32px;
 }
 
 .CharacterComponent h3 {

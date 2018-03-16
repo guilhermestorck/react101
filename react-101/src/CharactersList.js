@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import CharacterComponent from './CharacterComponent';
+import NewCharacterForm from './NewCharacterForm';
+import './CharactersList.css';
 
 class CharactersList extends Component {
 	constructor(props) {
@@ -24,9 +26,16 @@ class CharactersList extends Component {
 		const { characters } = this.state;
 		return (
 			<div className='CharactersList'>
-				{
-					characters.map(this.renderCharacter)
-				}
+				<div className='form'>
+					<NewCharacterForm 
+						onSubmit={(values) => this.setState({characters: this.state.characters.concat([values]) })}
+					/>
+				</div>
+				<div className='list'>
+					{
+						characters.map(this.renderCharacter)
+					}
+				</div>
 			</div>
 		)
 	}

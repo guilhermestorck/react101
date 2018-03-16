@@ -1,0 +1,13 @@
+.NewCharacterForm {
+    width: 400px;
+    margin: 20px auto 0px auto;
+    text-align: left;
+}
+
+.NewCharacterForm label, .NewCharacterForm input, .NewCharacterForm textarea, .NewCharacterForm button {
+    width: 100%;
+}
+
+.NewCharacterForm input, .NewCharacterForm textarea {
+    margin-bottom: 10px;
+}

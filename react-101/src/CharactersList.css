@@ -1,0 +1,14 @@
+.CharactersList {
+    margin: auto;
+    width: 800px;
+}
+
+.CharactersList .form {
+    width: 400px;
+    float: left;
+}
+
+.CharactersList .list {
+    width: 400px;
+    float: left;
+}

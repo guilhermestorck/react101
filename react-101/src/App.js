@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { PoorlyControlledInput, UncontrolledInput, ControlledInput } from './Inputs';
+import CharactersList from './CharactersList';
 
 class App extends Component {
 	render() {
@@ -12,14 +12,7 @@ class App extends Component {
 					<h1 className="App-title">Welcome to React</h1>
 				</header>
 				<div className="App-intro">
-					<h4> PoorlyControlledInput </h4>
-					<PoorlyControlledInput initialValue='Bla'/>
-
-					<h4> UncontrolledInput </h4>
-					<UncontrolledInput initialValue='Bla'/>
-
-					<h4> ControlledInput </h4>
-					<ControlledInput initialValue='Bla'/>
+					<CharactersList />
 				</div>
 			</div>
 		);
