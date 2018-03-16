@@ -2,50 +2,35 @@ import React, { Component } from 'react';
 import './NewCharacterForm.css';
 
 class NewCharacterForm extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			name: '',
-			image: '',
-			description: ''
-		}
-	}
 	render() {
 		return (
-			<form className='NewCharacterForm'>
+			<form className='NewCharacterForm' onSubmit={(evt) => this.handleSubmit.bind(this)(evt)}>
 				<label htmlFor='name'>Name</label>
-				<input
-					type='text'
-					name='name'
-					value={this.state.name}
-					onChange={(evt) => this.setState({ name: evt.target.value })}
-				/>
+				<input type='text' name='name'/>
 
 				<label htmlFor='image'>Image</label>
-				<input
-					type='text'
-					name='image'
-					value={this.state.image}
-					onChange={(evt) => this.setState({ image: evt.target.value })}
-				/>
+				<input type='text' name='image'/>
 
 				<label htmlFor='description'>Description</label>
-				<textarea
-					name='name'
-					value={this.state.description}
-					onChange={(evt) => this.setState({ description: evt.target.value })}
-				/>
+				<textarea name='description'/>
 
-				<button type='button' onClick={() => this.handleSubmit.bind(this)()}>
+				<button type='submit'>
 					Submit
 				</button>
 			</form>
 		);
 	}
 
-	handleSubmit() {
+	handleSubmit(evt) {
+		evt.preventDefault();
+		var data = {};
+		for(var i=0; i < evt.target.length; ++i) {
+			if(evt.target[i].type !== 'submit' && evt.target[i].type !== 'button') {
+				data[evt.target[i].name] = evt.target[i].value;
+			}
+		}
 		if(this.props.onSubmit) {
-			this.props.onSubmit(this.state);
+			this.props.onSubmit(data);
 		}
 	}
 }
