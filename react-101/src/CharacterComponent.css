@@ -1,0 +1,24 @@
+.CharacterComponent {
+    margin: auto;
+    display: block;
+    max-width: 200px;
+    border: 1px solid silver;
+    border-radius: 2px;
+    padding: 4px;
+}
+
+.CharacterComponent img {
+    float: left;
+    margin: 2px;
+    margin-right: 4px;
+}
+
+.CharacterComponent h3 {
+    line-height: 36px;
+    margin: 0px;
+    text-align: left;
+}
+
+.CharacterComponent p {
+    font-size: 12px;
+}
