@@ -22,7 +22,7 @@ class CharacterComponent extends Component {
 			<div className={`CharacterComponent ${isFavorite ? 'favorite' : ''}`}>
 				{ imageComponent }
 				<h3>
-					{name}
+					<span>{name}</span>
 					<button onClick={() => this.setState({ isFavorite: !isFavorite })}>
 						{ isFavorite ? 'Unfav' : 'Fav' }
 					</button>
