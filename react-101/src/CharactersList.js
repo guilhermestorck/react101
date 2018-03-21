@@ -1,25 +1,31 @@
 import React, { Component } from 'react';
 import CharacterComponent from './CharacterComponent';
 import NewCharacterForm from './NewCharacterForm';
+import axios from 'axios';
 import './CharactersList.css';
 
 class CharactersList extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			characters: [
-				{
-					name: 'Saitama',
-					description: 'Also known as Caped Baldy, he is a class C hero. Not impressive.',
-					image: 'https://myanimelist.cdn-dena.com/r/23x32/images/characters/11/294388.jpg?s=5cedf0bf18f09a7244365a605d829860'
-				},
-				{
-					name: 'Edward Elric',
-					description: 'Chibi brat',
-					image: null
-				}
-			]
+			characters: [],
+			isLoading: false
 		}
+	}
+
+	componentDidMount() {
+		this.setState({isLoading: true});
+		axios.get('https://api.jikan.me/search/anime/saku/1').then((response) => {
+			const characters = response.data.result.map((character) => ({
+				name: character.title,
+				description: character.description,
+				image: character.image_url
+			}));
+			this.setState({
+				characters: characters,
+				isLoading: false
+			});
+		});
 	}
 
 	render() {
